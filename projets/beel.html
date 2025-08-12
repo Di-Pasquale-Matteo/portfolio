@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatteoDP - Projet Beel</title>
+    <meta name="description" content="Portfolio de Matteo DI PASQUALE, étudiant en BUT Informatique, spécialisation Réalisation d'Applications : Conception, Développement, Validation (RACDV).">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+        .accent-color { color: #E11D48; }
+        .bg-accent-color { background-color: #E11D48; }
+        .border-accent-color { border-color: #E11D48; }
+        .hover\:text-accent-hover:hover { color: #BE123C; }
+        .hover\:bg-accent-hover:hover { background-color: #BE123C; }
+
+        @media (min-width: 1060px) {
+            .menu-desktop {
+                display: flex !important;
+            }
+            .menu-mobile {
+                display: none !important;
+            }
+            .sous-menu-mobile{
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 1059px) {
+            .menu-desktop {
+                display: none !important;
+            }
+            .menu-mobile {
+                display: block !important;
+            }
+        }
+        .list-disc-accent li::marker {
+            color: #E11D48;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+<nav class="bg-slate-900 text-white p-4 sticky top-0 z-50 shadow-lg">
+    <div class="mx-auto flex justify-between items-center">
+        <a href="../index.html" class="text-xl font-bold hover:text-accent-color transition-colors">Matteo DI PASQUALE</a>
+        <div class="menu-desktop hidden space-x-6">
+            <a href="../index.html#about" class="hover:text-accent-color transition-colors">À Propos</a>
+            <a href="../index.html#skills" class="hover:text-accent-color transition-colors">Compétences</a>
+            <a href="../index.html#projects" class="hover:text-accent-color transition-colors">Projets</a>
+            <a href="../index.html#experience" class="hover:text-accent-color transition-colors">Expérience</a>
+            <a href="../index.html#education" class="hover:text-accent-color transition-colors">Formation</a>
+            <a href="../index.html#contact" class="hover:text-accent-color transition-colors">Contact</a>
+            <a href="../portfolioApprentissage.html" class="hover:text-accent-color transition-colors">Portfolio d'apprentissage</a>
+        </div>
+        <button id="mobile-menu-button" class="menu-mobile focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </button>
+    </div>
+    <div id="mobile-menu" class="sous-menu-mobile hidden mt-2 space-y-2">
+        <a href="../index.html#about" class="block px-2 py-1 hover:bg-slate-700 rounded">À Propos</a>
+        <a href="../index.html#skills" class="block px-2 py-1 hover:bg-slate-700 rounded">Compétences</a>
+        <a href="../index.html#projects" class="block px-2 py-1 hover:bg-slate-700 rounded">Projets</a>
+        <a href="../index.html#experience" class="block px-2 py-1 hover:bg-slate-700 rounded">Expérience</a>
+        <a href="../index.html#education" class="block px-2 py-1 hover:bg-slate-700 rounded">Formation</a>
+        <a href="../index.html#contact" class="block px-2 py-1 hover:bg-slate-700 rounded">Contact</a>
+        <a href="../portfolioApprentissage.html" class="block px-2 py-1 hover:bg-slate-700 rounded">Portfolio d'apprentissage</a>
+    </div>
+</nav>
+
+<main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <article class="bg-white p-6 sm:p-8 md:p-10 rounded-lg shadow-xl max-w-4xl mx-auto">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 text-center accent-color">
+            Projet Bêêl : Application Web Progressive pour la Jeunesse en Lozère
+        </h1>
+        <p class="text-center text-slate-600 italic mb-8 text-md">Stage réalisé chez AFA-Multimédia SARL (Année Universitaire 2024-2025)</p>
+
+        <div class="my-8 flex justify-center">
+            <img style="background-color: rgb(153, 204, 0);" src="../images/beel-logo.png" alt="Logo de Bêêl" class="max-w-xs sm:max-w-sm h-auto rounded-md shadow-md">
+        </div>
+
+        <section class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Introduction : Le Contexte du Stage et la Mission</h2>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify mb-3">
+                Lors de mon stage chez <strong class="font-semibold">AFA-Multimédia</strong>, une agence de communication spécialisée, j'ai été
+                chargé du développement d'une <strong class="font-semibold">Application Web Progressive (PWA)</strong> nommée "Bêêl". Ce projet,
+                commandité par le Conseil Départemental des Jeunes de la Lozère, vise à faciliter l'accès aux informations
+                sur les événements, clubs et lieux de sports pour les jeunes de 12 à 25 ans de la région.
+            </p>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                Ma mission principale a consisté à prendre en charge la conception technique, le développement et la
+                validation de cette PWA, en respectant une charte graphique établie et des contraintes de performance et
+                de compatibilité mobile.
+            </p>
+        </section>
+
+        <section class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Objectifs et Fonctionnalités Clés de "Bêêl"</h2>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify mb-4">L'application "Bêêl" a été conçue pour offrir une expérience utilisateur optimisée et engageante :</p>
+            <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 text-justify">
+                <li><strong class="font-medium">Présentation des Événements et Clubs :</strong> Affichage clair et dynamique des activités sportives et des clubs locaux.</li>
+                <li><strong class="font-medium">Géolocalisation :</strong> Filtrage des événements et clubs en fonction de la proximité de l'utilisateur.</li>
+                <li><strong class="font-medium">Optimisation Mobile (PWA) :</strong>
+                    <ul class="list-disc list-inside space-y-1 mt-1 pl-6">
+                        <li>Installation sur l'écran d'accueil comme une application native.</li>
+                        <li>Fonctionnement en plein écran, sans les bandeaux du navigateur.</li>
+                        <li>Mise en cache des ressources pour des temps de chargement réduits et un accès hors connexion partiel.</li>
+                    </ul>
+                </li>
+                <li><strong class="font-medium">Interface Intuitive :</strong> Navigation simplifiée, affichage des informations sous forme de cartes, et modales interactives pour les détails.</li>
+                <li><strong class="font-medium">Administration via WordPress :</strong> Gestion des contenus (événements, clubs, page "Infos") par le client via une interface WordPress familière, avec importation de données depuis des flux externes (ex: TourInSoft).</li>
+            </ul>
+            <div class="my-8 flex justify-center">
+                <img src="../images/beel-interface.png" alt="Interface de l'application" class="max-w-full md:max-w-2xl h-auto rounded-lg shadow-lg border border-slate-200">
+            </div>
+        </section>
+
+        <section class="mb-10 p-6 bg-slate-50 rounded-lg shadow-md">
+            <h3 class="text-xl sm:text-2xl font-semibold text-accent-color mb-5 text-center">Choix Techniques et Architecture</h3>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify mb-4">Pour répondre aux exigences du projet, notamment l'intégration avec WordPress et la création d'une PWA,
+                les technologies suivantes ont été employées :</p>
+            <ul class="list-disc-accent list-inside space-y-3 text-lg text-slate-700 leading-relaxed pl-4 text-justify">
+                <li><strong class="font-medium">Front-end :</strong>
+                    <ul class="list-disc list-inside space-y-1 mt-1 pl-6">
+                        <li><strong class="font-semibold text-slate-800">Laravel :</strong> Utilisé comme framework PHP principal pour la logique applicative et le templating.</li>
+                        <li><strong class="font-semibold text-slate-800">Blade :</strong> Moteur de templates de Laravel pour la création de vues dynamiques et réutilisables.</li>
+                        <li><strong class="font-semibold text-slate-800">Vue.js :</strong> Framework JavaScript pour la création d'interfaces utilisateur interactives, notamment pour les modales et la gestion d'événements.</li>
+                        <li><strong class="font-semibold text-slate-800">HTML5, SCSS (compilé en CSS3) :</strong> Pour la structure et le style, avec une architecture SCSS modulaire.</li>
+                    </ul>
+                </li>
+                <li><strong class="font-medium">Back-end et Données :</strong>
+                    <ul class="list-disc list-inside space-y-1 mt-1 pl-6">
+                        <li><strong class="font-semibold text-slate-800">WordPress :</strong> Utilisé comme CMS pour l'administration du contenu par le client.</li>
+                        <li><strong class="font-semibold text-slate-800">Corcel :</strong> Bibliothèque PHP (ORM) pour interagir avec la base de données WordPress depuis Laravel, facilitant la récupération des posts et métadonnées.</li>
+                        <li><strong class="font-semibold text-slate-800">MySQL / MariaDB :</strong> Systèmes de gestion de bases de données.</li>
+                        <li><strong class="font-semibold text-slate-800">PHP :</strong> Pour la logique serveur et le développement de plugins WordPress (gestion des custom posts pour événements/clubs, importation de flux).</li>
+                    </ul>
+                </li>
+                <li><strong class="font-medium">PWA :</strong>
+                    <ul class="list-disc list-inside space-y-1 mt-1 pl-6">
+                        <li><strong class="font-semibold text-slate-800">Manifest.json :</strong> Fichier de configuration pour les métadonnées de la PWA (nom, icônes, couleurs, etc.).</li>
+                        <li><strong class="font-semibold text-slate-800">Service Worker :</strong> Script JavaScript pour la gestion du cache et le fonctionnement hors ligne.</li>
+                    </ul>
+                </li>
+                <li><strong class="font-medium">Outils de Développement :</strong> Laragon (environnement de développement local), Git (gestion de version via GitLab).</li>
+            </ul>
+            <div class="my-8 flex justify-center">
+                <img src="../images/beel-figure23.png" alt="Contenu du fichier manifest.json" class="max-w-full md:max-w-lg h-auto rounded-lg shadow-lg border border-slate-200">
+            </div>
+        </section>
+
+        <section class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Défis Techniques et Solutions Apportées</h2>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify mb-4">Plusieurs défis techniques ont ponctué ce projet :</p>
+            <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 text-justify">
+                <li><strong class="font-medium">Interopérabilité Laravel/WordPress :</strong> L'utilisation de Corcel a grandement simplifié
+                    l'accès aux données WordPress depuis Laravel, optimisant les requêtes par rapport à une approche manuelle.</li>
+                <li><strong class="font-medium">Développement des Modales Interactives :</strong> La création de modales fluides et réactives
+                    au toucher/clic (ouverture, fermeture, suivi du doigt) a nécessité un travail approfondi avec Vue.js et
+                    la gestion fine des transitions CSS.</li>
+                <li><strong class="font-medium">Optimisation des Requêtes avec Géolocalisation :</strong> Implémentation de la formule de
+                    Haversine directement dans les requêtes SQL pour filtrer les résultats par distance de manière
+                    performante.</li>
+                <li><strong class="font-medium">Mise en Place de la PWA :</strong> Configuration du manifest et du service worker,
+                    gestion des différents scénarios d'installation sur Android et iOS.</li>
+                <li><strong class="font-medium">Importation de Données Externes :</strong> Adaptation et création de logiques pour traiter
+                    des flux de données (JSON de TourInSoft, CSV pour les clubs) et les intégrer dans WordPress sous
+                    forme de custom posts.</li>
+            </ul>
+        </section>
+
+        <section class="mb-10 p-6 bg-slate-50 rounded-lg shadow-md">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-accent-color mb-4 text-center">Méthodologie et Organisation</h2>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                Le travail au sein d'AFA-Multimédia suivait une gestion de projet traditionnelle. J'ai travaillé
+                de manière autonome sur mes tâches, en bénéficiant du soutien de ma tutrice de stage, Camille JOLY,
+                et d'Aurélien FOISSE pour les aspects techniques plus pointus. J'ai régulièrement effectué des recherches
+                personnelles pour maîtriser les technologies (Laravel, Vue.js, PWA, Corcel). Les livraisons (Alpha et finale)
+                ont été gérées via des dépôts GitLab distincts pour le développement/test et la production.
+            </p>
+        </section>
+
+        <section class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Apprentissages et Compétences Acquises</h2>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify mb-4">Ce stage a été une expérience très enrichissante, me permettant de :</p>
+            <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 text-justify">
+                <li><strong class="font-medium">Approfondir ma maîtrise de Laravel et découvrir Vue.js</strong> dans un contexte professionnel.</li>
+                <li><strong class="font-medium">Comprendre les enjeux et l'implémentation d'une Progressive Web App.</strong></li>
+                <li><strong class="font-medium">Travailler avec un CMS (WordPress)</strong> et développer des solutions pour l'étendre (plugins, custom posts).</li>
+                <li><strong class="font-medium">Optimiser les interactions avec les bases de données</strong> et la performance des requêtes.</li>
+                <li><strong class="font-medium">Gérer l'interopérabilité entre différentes technologies.</strong></li>
+                <li><strong class="font-medium">Développer mon autonomie,</strong> ma capacité à rechercher des solutions et à prendre des initiatives techniques.</li>
+                <li>Appliquer des bonnes pratiques de conception, de programmation et d'accessibilité.</li>
+            </ul>
+        </section>
+
+        <section class="mb-6">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Conclusion</h2>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify mb-3">
+                Le développement de l'application "Bêêl" a permis d'apporter une solution moderne et adaptée aux jeunes
+                de la Lozère pour découvrir les activités sportives. Ce projet a constitué une excellente opportunité
+                d'appliquer et de développer mes compétences techniques et méthodologiques. L'intégration réussie de Laravel,
+                WordPress et des technologies PWA a abouti à une application performante et conviviale, répondant aux attentes
+                du client et de l'entreprise.
+            </p>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                <a href="https://beel.lozere.fr/" target="_blank" class="font-semibold text-accent-color hover:text-accent-hover hover:underline flex">
+                    Découvrir l'application Bêêl
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M12.293 2.293a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L14 5.414V13a1 1 0 11-2 0V5.414l-2.293 2.293A1 1 0 018.293 6.293l4-4z"/>
+                        <path d="M5 4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-3a1 1 0 112 0v3a3 3 0 01-3 3H5a3 3 0 01-3-3V5a3 3 0 013-3h3a1 1 0 110 2H5z"/>
+                    </svg>
+                </a>
+            </p>
+        </section>
+    </article>
+</main>
+
+<footer class="bg-slate-900 text-slate-400 py-8 text-center">
+    <div class="container mx-auto px-6">
+        <p>© <span id="currentYear"></span> Matteo DI PASQUALE. Tous droits réservés.</p>
+    </div>
+</footer>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

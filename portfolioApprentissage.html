@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatteoDP - Portfolio d'apprentissage</title>
+    <meta name="description" content="Portfolio d'apprentissage de Matteo DI PASQUALE, détaillant l'acquisition des compétences en BUT Informatique.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+        .accent-color { color: #E11D48; }
+        .bg-accent-color { background-color: #E11D48; }
+        .border-accent-color { border-color: #1eb317; }
+        .hover\:text-accent-hover:hover { color: #BE123C; }
+        .hover\:bg-accent-hover:hover { background-color: #BE123C; }
+
+        @media (min-width: 1060px) {
+            .menu-desktop {
+                display: flex !important;
+            }
+            .menu-mobile {
+                display: none !important;
+            }
+            .sous-menu-mobile{
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 1059px) {
+            .menu-desktop {
+                display: none !important;
+            }
+            .menu-mobile {
+                display: block !important;
+            }
+        }
+        .list-disc-accent li::marker {
+            color: #E11D48;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+<nav class="bg-slate-900 text-white p-4 sticky top-0 z-50 shadow-lg">
+    <div class="mx-auto flex justify-between items-center">
+        <a href="index.html" class="text-xl font-bold hover:text-accent-color transition-colors">Matteo DI PASQUALE</a>
+        <div class="menu-desktop hidden space-x-6">
+            <a href="index.html#about" class="hover:text-accent-color transition-colors">À Propos</a>
+            <a href="index.html#skills" class="hover:text-accent-color transition-colors">Compétences</a>
+            <a href="index.html#projects" class="hover:text-accent-color transition-colors">Projets</a>
+            <a href="index.html#experience" class="hover:text-accent-color transition-colors">Expérience</a>
+            <a href="index.html#education" class="hover:text-accent-color transition-colors">Formation</a>
+            <a href="index.html#contact" class="hover:text-accent-color transition-colors">Contact</a>
+            <a href="portfolioApprentissage.html" class="text-accent-color font-semibold">Portfolio d'apprentissage</a>
+        </div>
+        <button id="mobile-menu-button" class="menu-mobile focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </button>
+    </div>
+    <div id="mobile-menu" class="sous-menu-mobile hidden mt-2 space-y-2">
+        <a href="index.html#about" class="block px-2 py-1 hover:bg-slate-700 rounded">À Propos</a>
+        <a href="index.html#skills" class="block px-2 py-1 hover:bg-slate-700 rounded">Compétences</a>
+        <a href="index.html#projects" class="block px-2 py-1 hover:bg-slate-700 rounded">Projets</a>
+        <a href="index.html#experience" class="block px-2 py-1 hover:bg-slate-700 rounded">Expérience</a>
+        <a href="index.html#education" class="block px-2 py-1 hover:bg-slate-700 rounded">Formation</a>
+        <a href="index.html#contact" class="block px-2 py-1 hover:bg-slate-700 rounded">Contact</a>
+        <a href="portfolioApprentissage.html" class="block px-2 py-1 bg-slate-700 text-accent-color rounded font-semibold">Portfolio d'apprentissage</a>
+    </div>
+</nav>
+
+<header class="bg-slate-800 text-white py-16 md:py-24">
+    <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-3">Portfolio d'Apprentissage</h1>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto text-slate-300">
+            Suivi de l'acquisition des compétences du référentiel du BUT Informatique.
+        </p>
+    </div>
+</header>
+
+<main class="py-16 md:py-20 bg-white">
+    <div class="container mx-auto px-6 space-y-16">
+
+        <section id="competence3">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-slate-800">
+                Compétence 3 : <span class="accent-color">Administrer des systèmes informatiques communicants complexes</span>
+            </h2>
+
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-accent-color">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">AC 1 : Concevoir et développer des applications communicantes</h4>
+                    <span class="inline-block bg-green-200 text-green-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded mb-3">Acquis</span>
+                    <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                        Dans le cadre du projet Jicursum, j'ai réalisé une application communiquant avec une
+                        base de données relationnelle et offrant différentes interfaces selon le profil
+                        utilisateur.
+                        J'ai également réalisé, pendant mon stage, une application web qui m'a permis de développer cette
+                        compétence en faisant communiquer un site utilisant le framework Laravel avec une base de données
+                        Wordpress à l'aide de Corcel.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-500">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">AC 2 : Utiliser des serveurs et des services réseaux virtualisés</h4>
+                    <span class="inline-block bg-yellow-200 text-yellow-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded mb-3">En cours d'acquisition</span>
+                    <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                        Peu de projets m'ont permis de développer cette compétence, qui n'ai mobilisé seulement dans quelques TD
+                        et la SAE actuelle du semestre 4.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-accent-color">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">AC 3 : Sécuriser les services et données d'un système</h4>
+                    <span class="inline-block bg-green-200 text-green-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded mb-3">Acquis</span>
+                    <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                        Pour le projet de Jicursum, la gestion de la sécurité des données était essentielle.
+                        J’ai mis en œuvre plusieurs bonnes pratiques de sécurité, notamment :
+                        La gestion des sessions avec contrôle d'accès selon les rôles.
+                        La protection contre les injections SQL grâce à l’utilisation de requêtes préparées.
+                        La validation côté serveur et côté client pour éviter les saisies malveillantes.
+                        La réalisation d'un hashage des mots de passe.
+                        Ces éléments m’ont permis de comprendre les bases de la sécurisation des services web et d'appliquer
+                        des méthodes concrètes pour protéger les données utilisateurs.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-12 border-slate-300">
+
+        <section id="competence4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-slate-800">
+                Compétence 4 : <span class="accent-color">Gérer des données de l’information</span>
+            </h2>
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-500">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">AC 1 : Optimiser les modèles de données de l'entreprise</h4>
+                    <span class="inline-block bg-yellow-200 text-yellow-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded mb-3">En cours d'acquisition</span>
+                    <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                        Lors de mon stage, j'ai dû adapter une base de données, mais utilisant le CMS Wordpress, il m'a été
+                        conseillé de réaliser une base de données simple, mais pas particulièrement optimisée afin de simplifier
+                        et d'accélérer la création de l'application.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-accent-color">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">AC 2 : Assurer la confidentialité des données (intégrité et sécurité)</h4>
+                    <span class="inline-block bg-green-200 text-green-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded mb-3">Acquis</span>
+                    <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                        Comme expliqué précédemment, pour ma SAE du semestre 3 (JiCursum), nous avons réaliser un hashage des
+                        mots de passe, mais nous avons également dû faire des recherches sur les données que nous pouvions
+                        utiliser et rendre publique sans risques.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-accent-color">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">AC 3 : Organiser la restitution de données à travers la programmation et la visualisation</h4>
+                    <span class="inline-block bg-green-200 text-green-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded mb-3">Acquis</span>
+                    <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                        Dans le projet Jicursum, j’ai organisé la restitution des données en affichant de manière claire et
+                        structurée les notes des étudiants et les commentaires des enseignants, selon le profil utilisateur
+                        connecté.
+                        Ce fut également le cas lors de mon stage.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-accent-color">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">AC 4 : Manipuler des données hétérogènes</h4>
+                    <span class="inline-block bg-green-200 text-green-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded mb-3">Acquis</span>
+                    <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                        Lors de mon stage, j'ai intégré les données d'un flux dans la base de données du projet. Ce flux était
+                        sous forme de json. J'ai également géré l'insertion de données depuis un fichier CSV.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-12 border-slate-300">
+
+        <section id="competence5">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-slate-800">
+                Compétence 5 : <span class="accent-color">Conduire un projet</span>
+            </h2>
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-500">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">AC 1 : Identifier les processus présents dans une organisation en vue d'améliorer les systèmes d'information</h4>
+                    <span class="inline-block bg-yellow-200 text-yellow-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded mb-3">En cours d'acquisition</span>
+                    <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                        Je n'ai pas eu à mobiliser cette compétence pour mes projets. Je l'ai essentiellement travaillé lors de
+                        mes cours.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-500">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">AC 2 : Formaliser les besoins du client et de l'utilisateur</h4>
+                    <span class="inline-block bg-yellow-200 text-yellow-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded mb-3">En cours d'acquisition</span>
+                    <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                        J'ai pu pratiquer cette compétence lors du projet de JiCursum. En groupe, au début du projet, nous avons
+                        dû lister les besoins fonctionnels de notre application. Cependant, par la suite, n'étant pas Product
+                        Owner et donc n'ayant pas de contacts directs avec le client, je n'ai pas formalisé les besoins du client.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-accent-color">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">AC 3 : Identifier les critères de faisabilité d'un projet informatique</h4>
+                    <span class="inline-block bg-green-200 text-green-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded mb-3">Acquis</span>
+                    <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                        Toujours dans le même projet, nous avons, en groupe dû établir l'effort nécessaire de chaque tâche et
+                        ainsi prévoir la faisabilité de ces dernières.
+                        Également, lors de mon stage, j'ai eu à abandonner certaines fonctionnalités concernant les catégories
+                        des données qui n'étaient pas pratiques à utiliser.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-accent-color">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">AC 4 : Définir et mettre en œuvre une démarche de suivi de projet</h4>
+                    <span class="inline-block bg-green-200 text-green-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded mb-3">Acquis</span>
+                    <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                        J'ai pu travailler cette compétence lors de ma SAE de semestre 3, puisque nous utilisions la méthode
+                        AGILE. Différentes réunions étaient donc organisées pour suivre l'avancée du projet, notamment les Daily
+                        Stand up Meetings qui permettait de connaître l'avancée quotidienne de chacun.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer class="bg-slate-900 text-slate-400 py-8 text-center">
+    <div class="container mx-auto px-6">
+        <p>© <span id="currentYear"></span> Matteo DI PASQUALE. Tous droits réservés.</p>
+    </div>
+</footer>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

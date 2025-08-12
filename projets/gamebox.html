@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MatteoDP - Projet Gamebox</title>
+  <meta name="description" content="Portfolio de Matteo DI PASQUALE, étudiant en BUT Informatique, spécialisation Réalisation d'Applications : Conception, Développement, Validation (RACDV).">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+    .accent-color { color: #E11D48; }
+    .bg-accent-color { background-color: #E11D48; }
+    .border-accent-color { border-color: #E11D48; }
+    .hover\:text-accent-hover:hover { color: #BE123C; }
+    .hover\:bg-accent-hover:hover { background-color: #BE123C; }
+
+    @media (min-width: 1060px) {
+      .menu-desktop {
+        display: flex !important;
+      }
+      .menu-mobile {
+        display: none !important;
+      }
+      .sous-menu-mobile{
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 1059px) {
+      .menu-desktop {
+        display: none !important;
+      }
+      .menu-mobile {
+        display: block !important;
+      }
+    }
+    .list-disc-accent li::marker {
+      color: #E11D48;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+<nav class="bg-slate-900 text-white p-4 sticky top-0 z-50 shadow-lg">
+  <div class="mx-auto flex justify-between items-center">
+    <a href="../index.html" class="text-xl font-bold hover:text-accent-color transition-colors">Matteo DI PASQUALE</a>
+    <div class="menu-desktop hidden space-x-6">
+      <a href="../index.html#about" class="hover:text-accent-color transition-colors">À Propos</a>
+      <a href="../index.html#skills" class="hover:text-accent-color transition-colors">Compétences</a>
+      <a href="../index.html#projects" class="hover:text-accent-color transition-colors">Projets</a>
+      <a href="../index.html#experience" class="hover:text-accent-color transition-colors">Expérience</a>
+      <a href="../index.html#education" class="hover:text-accent-color transition-colors">Formation</a>
+      <a href="../index.html#contact" class="hover:text-accent-color transition-colors">Contact</a>
+      <a href="../portfolioApprentissage.html" class="hover:text-accent-color transition-colors">Portfolio d'apprentissage</a>
+    </div>
+    <button id="mobile-menu-button" class="menu-mobile focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="sous-menu-mobile hidden mt-2 space-y-2">
+    <a href="../index.html#about" class="block px-2 py-1 hover:bg-slate-700 rounded">À Propos</a>
+    <a href="../index.html#skills" class="block px-2 py-1 hover:bg-slate-700 rounded">Compétences</a>
+    <a href="../index.html#projects" class="block px-2 py-1 hover:bg-slate-700 rounded">Projets</a>
+    <a href="../index.html#experience" class="block px-2 py-1 hover:bg-slate-700 rounded">Expérience</a>
+    <a href="../index.html#education" class="block px-2 py-1 hover:bg-slate-700 rounded">Formation</a>
+    <a href="../index.html#contact" class="block px-2 py-1 hover:bg-slate-700 rounded">Contact</a>
+    <a href="../portfolioApprentissage.html" class="block px-2 py-1 hover:bg-slate-700 rounded">Portfolio d'apprentissage</a>
+  </div>
+</nav>
+
+<main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+  <article class="bg-white p-6 sm:p-8 md:p-10 rounded-lg shadow-xl max-w-4xl mx-auto">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-2 text-center accent-color">
+      Projet Gamebox
+      <span class="block sm:inline text-2xl sm:text-3xl text-slate-500 font-medium mt-1 sm:mt-0 sm:ml-2">(Trophées NSI 2023)</span>
+    </h1>
+    <p class="text-center text-slate-600 italic mb-8 text-md">Une boîte à jeux virtuelle codée en Python avec la bibliothèque likeprocessing.</p>
+
+    <div class="w-full max-w-3xl mx-auto aspect-[16/9] my-8 shadow-lg rounded-lg overflow-hidden">
+      <iframe src="https://www.youtube.com/embed/JHMgVFK94AM" title="Présentation du Projet Gamebox" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="w-full h-full"></iframe>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Concept du Projet : Une Collection de Mini-Jeux</h2>
+      <p class="text-lg text-slate-700 leading-relaxed text-justify mb-3">
+        L'idée derrière <strong class="font-semibold">Gamebox</strong> était de créer une application centralisée, une sorte de "boîte à
+        jeux virtuelle", permettant de lancer et de jouer à plusieurs petits jeux simples et amusants.
+        Le projet a été développé en Python, et l'ensemble des interfaces graphiques, que ce soit le menu principal
+        ou les jeux eux-mêmes, a été réalisé avec la bibliothèque <code>likeprocessing</code>.
+      </p>
+      <p class="text-lg text-slate-700 leading-relaxed text-justify">
+        Chaque jeu est codé sous forme de classe dans un fichier distinct, puis tous ces modules sont intégrés
+        dans un fichier principal gérant l'interface globale et la navigation. Les jeux sont accessibles via des
+        boutons depuis un menu central.
+      </p>
+      <div class="my-8 flex justify-center">
+        <img src="../images/gamebox-team.png" alt="Image de l'équipe Gamebox" class="max-w-full md:max-w-lg h-auto rounded-lg shadow-lg border border-slate-200">
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Jeux Inclus et Contribution de l'Équipe</h2>
+      <p class="text-lg text-slate-700 leading-relaxed text-justify mb-4">Gamebox propose une sélection de 7 jeux classiques :</p>
+      <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 mb-6 text-justify">
+        <li>Morpion (Tic-Tac-Toe)</li>
+        <li>Puissance 4</li>
+        <li>Snake</li>
+        <li>Casse-tête (Taquin / Sliding Puzzle)</li>
+        <li>Pendu (Hangman)</li>
+        <li>Memory</li>
+        <li>Sudoku</li>
+      </ul>
+      <div class="p-4 bg-slate-50 rounded-md shadow-sm">
+        <p class="text-lg text-slate-700 leading-relaxed text-justify mb-3">La réalisation a été un effort d'équipe où les tâches ont été réparties :</p>
+        <ul class="list-disc list-inside space-y-1 text-lg text-slate-700 leading-relaxed pl-4 text-justify">
+          <li><strong class="font-medium">Mathis :</strong> Interface principale, logo, menu, et le jeu Puissance 4.</li>
+          <li><strong class="font-medium">Matteo (moi) :</strong> Les jeux Sudoku, Casse-tête, Morpion, et Pendu.</li>
+        </ul>
+        <p class="text-lg text-slate-700 leading-relaxed text-justify mt-3">Les jeux Snake et Memory avaient été développés au préalable durant l'année scolaire, en cours de NSI.</p>
+      </div>
+    </section>
+
+    <section class="mb-10 p-6 bg-slate-50 rounded-lg shadow-md">
+      <h3 class="text-xl sm:text-2xl font-semibold text-accent-color mb-5 text-center">Approche Technique et Outils</h3>
+      <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 text-justify">
+        <li><strong class="font-medium">Langage de Programmation :</strong> Python</li>
+        <li><strong class="font-medium">Bibliothèque Graphique :</strong> <code>likeprocessing</code></li>
+        <li><strong class="font-medium">Structure du Code :</strong> Approche orientée objet avec des classes pour chaque jeu, intégrées dans une interface principale.</li>
+        <li><strong class="font-medium">Collaboration et Versionning :</strong> GitHub pour la centralisation du code, PyCharm comme IDE.</li>
+        <li><strong class="font-medium">Communication :</strong> Discord, notamment pendant les périodes hors établissement scolaire.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Défis Rencontrés et Solutions</h2>
+      <p class="text-lg text-slate-700 leading-relaxed text-justify mb-3">
+        Le principal défi technique a été de comprendre comment <strong class="font-semibold">lier efficacement tous les programmes des
+        différents jeux en une seule application cohérente</strong>. Cela a nécessité une réflexion sur une trame de
+        programmation commune applicable à chaque jeu pour faciliter leur intégration dans l'interface principale,
+        sans avoir à refondre entièrement la logique de chaque jeu. Des efforts ont été faits pour uniformiser les
+        dimensions et les méthodes de codage.
+      </p>
+      <p class="text-lg text-slate-700 leading-relaxed text-justify">
+        Des tests et des sessions de débogage ont été menés pour s'assurer du bon fonctionnement de chaque jeu et de l'application globale.
+      </p>
+    </section>
+
+    <section class="mb-10 p-6 bg-slate-50 rounded-lg shadow-md">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-accent-color mb-4 text-center">Mon Rôle Spécifique et Apprentissages (en tant que Matteo)</h2>
+      <p class="text-lg text-slate-700 leading-relaxed text-justify mb-4">En tant que Matteo, ma contribution s'est concentrée sur le développement de quatre jeux distincts :</p>
+      <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 mb-4 text-justify">
+        <li><strong class="font-medium">Sudoku :</strong> Implémentation de la logique de jeu, de la grille et de la vérification des règles.</li>
+        <li><strong class="font-medium">Casse-tête (Taquin) :</strong> Création du mécanisme de puzzle à tuiles coulissantes.</li>
+        <li><strong class="font-medium">Morpion :</strong> Développement du jeu classique à deux joueurs.</li>
+        <li><strong class="font-medium">Pendu :</strong> Conception du jeu de devinettes de mots.</li>
+      </ul>
+      <p class="text-lg text-slate-700 leading-relaxed text-justify mb-4">Pour chacun de ces jeux, j'ai dû :</p>
+      <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 mb-4 text-justify">
+        <li>Concevoir et coder la logique de jeu spécifique.</li>
+        <li>Créer l'interface graphique correspondante avec <code>likeprocessing</code>.</li>
+        <li>Assurer l'intégration de ces jeux dans la structure globale de Gamebox définie par l'équipe.</li>
+      </ul>
+      <p class="text-lg text-slate-700 leading-relaxed text-justify">Ce projet m'a permis de :</p>
+      <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 text-justify">
+        <li>Mettre en pratique la programmation orientée objet en Python.</li>
+        <li>Approfondir mon utilisation de la bibliothèque <code>likeprocessing</code> pour des interfaces graphiques interactives.</li>
+        <li>Comprendre les défis de l'intégration de modules multiples au sein d'un projet plus large.</li>
+        <li>Collaborer au sein d'une équipe sur un projet de développement, en utilisant des outils comme GitHub.</li>
+        <li>Réfléchir à l'architecture logicielle pour permettre l'ajout et la gestion de plusieurs "mini-applications".</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Pistes d'Amélioration et Perspectives</h2>
+      <p class="text-lg text-slate-700 leading-relaxed text-justify mb-4">Le projet Gamebox, bien que fonctionnel et ludique, offre plusieurs pistes d'amélioration envisagées :</p>
+      <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 text-justify">
+        <li>Ajout d'un système de score pour chaque jeu.</li>
+        <li>Développement d'un mode multijoueur en ligne pour les jeux compatibles (Morpion, Puissance 4, Memory).</li>
+        <li>Intégration de nouveaux jeux (ex: Démineur).</li>
+        <li>Amélioration des interfaces graphiques de certains jeux (Sudoku, Casse-tête, Pendu, Morpion).</li>
+        <li>Ajout de contenu supplémentaire (nouvelles grilles de Sudoku, nouveaux mots pour le Pendu).</li>
+      </ul>
+    </section>
+
+    <section class="mb-6">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Conclusion</h2>
+      <p class="text-lg text-slate-700 leading-relaxed text-justify">
+        Gamebox est un projet amusant qui a permis de mettre en application des concepts de programmation Python
+        et de développement d'interfaces graphiques. Malgré le défi principal de l'intégration, nous avons réussi à créer
+        une version fonctionnelle comprenant 7 jeux. Ce fut une expérience enrichissante, tant sur le plan technique que
+        sur celui de la collaboration en équipe. Le programme reste une source de divertissement simple et accessible.
+      </p>
+    </section>
+  </article>
+</main>
+
+<footer class="bg-slate-900 text-slate-400 py-8 text-center">
+  <div class="container mx-auto px-6">
+    <p>© <span id="currentYear"></span> Matteo DI PASQUALE. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  });
+
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

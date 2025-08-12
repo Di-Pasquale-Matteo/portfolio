@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatteoDP - Projet Eggdrasil</title>
+    <meta name="description" content="Portfolio de Matteo DI PASQUALE, étudiant en BUT Informatique, spécialisation Réalisation d'Applications : Conception, Développement, Validation (RACDV).">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+        .accent-color { color: #E11D48; }
+        .bg-accent-color { background-color: #E11D48; }
+        .border-accent-color { border-color: #E11D48; }
+        .hover\:text-accent-hover:hover { color: #BE123C; }
+        .hover\:bg-accent-hover:hover { background-color: #BE123C; }
+
+        @media (min-width: 1060px) {
+            .menu-desktop {
+                display: flex !important;
+            }
+            .menu-mobile {
+                display: none !important;
+            }
+            .sous-menu-mobile{
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 1059px) {
+            .menu-desktop {
+                display: none !important;
+            }
+            .menu-mobile {
+                display: block !important;
+            }
+        }
+        .list-disc-accent li::marker {
+            color: #E11D48;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+<nav class="bg-slate-900 text-white p-4 sticky top-0 z-50 shadow-lg">
+    <div class="mx-auto flex justify-between items-center">
+        <a href="../index.html" class="text-xl font-bold hover:text-accent-color transition-colors">Matteo DI PASQUALE</a>
+        <div class="menu-desktop hidden space-x-6">
+            <a href="../index.html#about" class="hover:text-accent-color transition-colors">À Propos</a>
+            <a href="../index.html#skills" class="hover:text-accent-color transition-colors">Compétences</a>
+            <a href="../index.html#projects" class="hover:text-accent-color transition-colors">Projets</a>
+            <a href="../index.html#experience" class="hover:text-accent-color transition-colors">Expérience</a>
+            <a href="../index.html#education" class="hover:text-accent-color transition-colors">Formation</a>
+            <a href="../index.html#contact" class="hover:text-accent-color transition-colors">Contact</a>
+            <a href="../portfolioApprentissage.html" class="hover:text-accent-color transition-colors">Portfolio d'apprentissage</a>
+        </div>
+        <button id="mobile-menu-button" class="menu-mobile focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </button>
+    </div>
+    <div id="mobile-menu" class="sous-menu-mobile hidden mt-2 space-y-2">
+        <a href="../index.html#about" class="block px-2 py-1 hover:bg-slate-700 rounded">À Propos</a>
+        <a href="../index.html#skills" class="block px-2 py-1 hover:bg-slate-700 rounded">Compétences</a>
+        <a href="../index.html#projects" class="block px-2 py-1 hover:bg-slate-700 rounded">Projets</a>
+        <a href="../index.html#experience" class="block px-2 py-1 hover:bg-slate-700 rounded">Expérience</a>
+        <a href="../index.html#education" class="block px-2 py-1 hover:bg-slate-700 rounded">Formation</a>
+        <a href="../index.html#contact" class="block px-2 py-1 hover:bg-slate-700 rounded">Contact</a>
+        <a href="../portfolioApprentissage.html" class="block px-2 py-1 hover:bg-slate-700 rounded">Portfolio d'apprentissage</a>
+    </div>
+</nav>
+
+<main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <article class="bg-white p-6 sm:p-8 md:p-10 rounded-lg shadow-xl max-w-4xl mx-auto">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-2 text-center accent-color">
+            Projet Eggdrasil
+            <span class="block sm:inline text-2xl sm:text-3xl text-slate-500 font-medium mt-1 sm:mt-0 sm:ml-2">(Jeu de la Code Game Jam 2024)</span>
+        </h1>
+        <p class="text-center text-slate-600 italic mb-8 text-md">Un platformer procédural mythologique développé avec LÖVE.</p>
+
+        <div class="w-full max-w-3xl mx-auto aspect-[16/9] my-8 shadow-lg rounded-lg overflow-hidden">
+            <iframe src="https://www.youtube.com/embed/N1rXARCO2so" title="Présentation du projet de jeu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="w-full h-full"></iframe>
+        </div>
+
+        <section class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Concept du Jeu : La Quête du Valhalla Aviaire</h2>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                "Eggdrasil" plonge le joueur dans un monde de volatiles où les divinités côtoient les mortels.
+                L'histoire suit une courageuse poule, discriminée avec ses congénères coqs et poules pour leur incapacité
+                à voler. Déterminée à obtenir une place au Valhalla pour les siens, elle défie les déités et entreprend
+                un périlleux voyage vers Asgard, la cime de l'arbre-monde Eggdrasil.
+            </p>
+        </section>
+
+        <section class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Gameplay et Fonctionnalités du Prototype</h2>
+            <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 mb-6 text-justify">
+                <li><strong class="font-medium">Genre :</strong> Platformer 2D avec génération procédurale des niveaux.</li>
+                <li><strong class="font-medium">Personnage Jouable :</strong> Une poule agile et déterminée.</li>
+                <li><strong class="font-medium">Objectif :</strong> Traverser des étages générés aléatoirement, remplis d'obstacles (parkour, ennemis).</li>
+                <li><strong class="font-medium">Progression :</strong> Vaincre un boss à la fin de chaque étage pour accéder au suivant. (Ce prototype inclut un seul étage et un boss final.)</li>
+                <li><strong class="font-medium">Mouvement et Combat :</strong>
+                    <ul class="list-disc list-inside space-y-1 mt-2 pl-6">
+                        <li>Déplacement fluide (ZQSD).</li>
+                        <li>Saut à hauteur variable (Espace).</li>
+                        <li>Attaque au corps-à-corps (J).</li>
+                        <li>Capacité spéciale "Dash" (O) pour interagir avec des portes et esquiver sur les côtés</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="my-8 flex justify-center">
+                <img src="../images/eggdrasil-game.png" alt="Image du jeu Eggdrasil" class="max-w-full md:max-w-xl h-auto rounded-lg shadow-lg border border-slate-200">
+            </div>
+        </section>
+
+        <section class="mb-10 p-6 bg-slate-50 rounded-lg shadow-md">
+            <h3 class="text-xl sm:text-2xl font-semibold text-accent-color mb-5 text-center">Approche Technique et Technologies</h3>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify mb-4">Ce prototype a été développé en utilisant le framework LÖVE et des bibliothèques Lua :</p>
+            <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 text-justify">
+                <li><strong class="font-medium">Framework de Jeu :</strong> <a href="https://love2d.org/" target="_blank" class="font-semibold text-accent-color hover:text-accent-hover hover:underline">LÖVE (LÖVE 2D)</a> - Un moteur de jeu 2D gratuit et open-source en Lua.</li>
+                <li><strong class="font-medium">Gestion des Collisions :</strong> <a href="https://github.com/kikito/bump.lua" target="_blank" class="font-semibold text-accent-color hover:text-accent-hover hover:underline">bump.lua</a> - Une bibliothèque Lua pour la gestion des collisions AABB (Axis-Aligned Bounding Box).</li>
+                <li><strong class="font-medium">Programmation Orientée Objet :</strong> <a href="https://github.com/kikito/middleclass" target="_blank" class="font-semibold text-accent-color hover:text-accent-hover hover:underline">middleclass</a> - Une librairie pour faciliter la POO en Lua.</li>
+                <li><strong class="font-medium">Génération Procédurale :</strong> Algorithmes développés pour créer dynamiquement la structure des salles et la disposition des obstacles.</li>
+            </ul>
+        </section>
+
+        <section class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Mon Rôle et Apprentissages</h2>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify mb-4">En tant qu'un développeur sur ce prototype, mes responsabilités ont couvert :</p>
+            <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 mb-4 text-justify">
+                <li><strong class="font-medium">Game Design :</strong> Conception du concept initial, de l'univers, des mécaniques de jeu principales (déplacement, saut, combat, dash).</li>
+                <li><strong class="font-medium">Programmation (Lua / LÖVE) :</strong> Implémentation des menus et des collision.</li>
+                <li><strong class="font-medium">Intégration des Librairies :</strong> Mise en place et utilisation de <code>bump.lua</code> pour les collisions.</li>
+                <li><strong class="font-medium">Conception graphique :</strong> Création du modèle des personnages et des armes.</li>
+                <li><strong class="font-medium">Tests et Débogage :</strong> Itérations pour assurer la jouabilité et corriger les bugs.</li>
+            </ul>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify">Ce projet a été une excellente opportunité pour :</p>
+            <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 text-justify">
+                <li>Découvrir la programmation en Lua et l'utilisation du framework LÖVE.</li>
+                <li>Comprendre et implémenter des algorithmes de génération procédurale.</li>
+                <li>Gérer les aspects fondamentaux du développement de jeu (collisions, états du jeu, entrées utilisateur).</li>
+                <li>Développer un projet de jeu de manière autonome, de l'idée initiale au prototype fonctionnel.</li>
+            </ul>
+        </section>
+
+        <section class="mb-10 p-6 bg-slate-50 rounded-lg shadow-md">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-accent-color mb-4 text-center">Comment Jouer et Liens</h2>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify mb-3">Ce prototype est très court et ne contient qu'un seul boss !</p>
+            <h3 class="text-xl font-semibold text-slate-800 mb-2">Contrôles :</h3>
+            <ul class="list-disc-accent list-inside space-y-1 text-lg text-slate-700 leading-relaxed pl-4 mb-4 text-justify">
+                <li><strong class="font-medium">ZQSD :</strong> Se déplacer</li>
+                <li><strong class="font-medium">Espace :</strong> Sauter (maintenir pour sauter plus haut)</li>
+                <li><strong class="font-medium">J :</strong> Attaquer</li>
+                <li><strong class="font-medium">O :</strong> Utiliser des portes / Dasher (essayez contre un mur !)</li>
+            </ul>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                Pour télécharger le jeu, rendez-vous à l’adresse suivante : <a href="https://darkaurelien.itch.io/eggdrasil" target="_blank" class="font-semibold text-accent-color hover:text-accent-hover hover:underline">https://darkaurelien.itch.io/eggdrasil</a>
+            </p>
+        </section>
+
+        <section class="mb-6">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Conclusion</h2>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                "Eggdrasil" est un prototype qui explore un univers original et des mécaniques de jeu de plateforme
+                classiques avec une touche de génération procédurale. Bien que court, il a permis de valider le concept
+                de base et de jeter les fondations pour un jeu potentiellement plus vaste et riche. Ce projet a été une
+                expérience d'apprentissage intense et gratifiante dans le domaine du développement de jeux indépendants.
+            </p>
+        </section>
+    </article>
+</main>
+
+<footer class="bg-slate-900 text-slate-400 py-8 text-center">
+    <div class="container mx-auto px-6">
+        <p>© <span id="currentYear"></span> Matteo DI PASQUALE. Tous droits réservés.</p>
+    </div>
+</footer>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

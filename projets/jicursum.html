@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MatteoDP - Projet JiCursum</title>
+  <meta name="description" content="Détail du projet JiCursum réalisé par Matteo DI PASQUALE, étudiant en BUT Informatique.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+    /* Custom accent color - inspired by your CV's pink/purple */
+    .accent-color { color: #E11D48; /* Rose 600 in Tailwind v3 */}
+    .bg-accent-color { background-color: #E11D48; }
+    .border-accent-color { border-color: #E11D48; }
+    .hover\:text-accent-hover:hover { color: #BE123C; /* Rose 700 */}
+    .hover\:bg-accent-hover:hover { background-color: #BE123C; }
+
+    @media (min-width: 1060px) {
+      .menu-desktop {
+        display: flex !important;
+      }
+      .menu-mobile {
+        display: none !important;
+      }
+      .sous-menu-mobile{
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 1059px) {
+      .menu-desktop {
+        display: none !important;
+      }
+      .menu-mobile {
+        display: block !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+<nav class="bg-slate-900 text-white p-4 sticky top-0 z-50 shadow-lg">
+  <div class="mx-auto flex justify-between items-center">
+    <a href="../index.html" class="text-xl font-bold hover:text-accent-color transition-colors">Matteo DI PASQUALE</a>
+    <div class="menu-desktop hidden space-x-6">
+      <a href="../index.html#about" class="hover:text-accent-color transition-colors">À Propos</a>
+      <a href="../index.html#skills" class="hover:text-accent-color transition-colors">Compétences</a>
+      <a href="../index.html#projects" class="hover:text-accent-color transition-colors">Projets</a>
+      <a href="../index.html#experience" class="hover:text-accent-color transition-colors">Expérience</a>
+      <a href="../index.html#education" class="hover:text-accent-color transition-colors">Formation</a>
+      <a href="../index.html#contact" class="hover:text-accent-color transition-colors">Contact</a>
+      <a href="../portfolioApprentissage.html" class="hover:text-accent-color transition-colors">Portfolio d'apprentissage</a>
+    </div>
+    <button id="mobile-menu-button" class="menu-mobile focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="sous-menu-mobile hidden mt-2 space-y-2">
+    <a href="../index.html#about" class="block px-2 py-1 hover:bg-slate-700 rounded">À Propos</a>
+    <a href="../index.html#skills" class="block px-2 py-1 hover:bg-slate-700 rounded">Compétences</a>
+    <a href="../index.html#projects" class="block px-2 py-1 hover:bg-slate-700 rounded">Projets</a>
+    <a href="../index.html#experience" class="block px-2 py-1 hover:bg-slate-700 rounded">Expérience</a>
+    <a href="../index.html#education" class="block px-2 py-1 hover:bg-slate-700 rounded">Formation</a>
+    <a href="../index.html#contact" class="block px-2 py-1 hover:bg-slate-700 rounded">Contact</a>
+    <a href="../portfolioApprentissage.html" class="block px-2 py-1 hover:bg-slate-700 rounded">Portfolio d'apprentissage</a>
+  </div>
+</nav>
+
+<main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+  <article class="bg-white p-6 sm:p-8 md:p-10 rounded-lg shadow-xl max-w-4xl mx-auto">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-8 text-center accent-color">
+      Projet JiCursum : Simplifier la Gestion des Poursuites d'Études
+    </h1>
+
+    <div class="my-8 flex justify-center">
+      <img src="../images/jicursum-logo.png" alt="Logo JiCursum" class="max-w-xs sm:max-w-sm h-auto rounded-md shadow-md"/>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Introduction : Le Défi</h2>
+      <p class="text-lg text-slate-700 leading-relaxed text-justify">
+        Dans le cadre du semestre 3 de ma formation BUT Informatique à l'IUT de Montpellier-Sète (2024-2025), j'ai eu l'opportunité de
+        contribuer au développement de <strong class="font-semibold text-accent-color">JiCursum</strong>, une application web ambitieuse. Le projet visait à
+        moderniser et automatiser le processus d'évaluation des candidatures étudiantes pour les poursuites d'études,
+        une tâche jusqu'alors fastidieuse et manuelle pour le conseil de poursuite d'études.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Mon Rôle et Nos Objectifs</h2>
+      <p class="text-lg text-slate-700 leading-relaxed mb-4 text-justify">
+        Au sein d'une équipe de quatre étudiants (Corentin Cano, Théodore de Boisseson, Matteo Di Pasquale,
+        Emrys Esceth N'Zi Lozat), j'ai participé activement à toutes les phases du projet. Notre mission collective était de
+        concevoir et développer une solution permettant :
+      </p>
+      <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4">
+        <li>L'importation sécurisée des notes des étudiants.</li>
+        <li>La génération d'avis de poursuite d'études, paramétrables et automatisés.</li>
+        <li>La consultation centralisée des informations par les administrateurs, professeurs et recruteurs d'écoles, dans
+          le respect du RGPD.</li>
+        <li>La création d'agrégations de notes personnalisées.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Fonctionnalités Clés Développées</h2>
+      <p class="text-lg text-slate-700 leading-relaxed mb-4">JiCursum offre une panoplie de fonctionnalités pour répondre aux besoins des différents utilisateurs :</p>
+      <ol class="list-decimal-accent list-inside space-y-3 text-lg text-slate-700 leading-relaxed pl-4">
+        <li><strong class="font-medium">Gestion des Utilisateurs :</strong> Création et administration des comptes (administrateurs,
+          professeurs, écoles, étudiants) avec des droits d'accès spécifiques.</li>
+        <li><strong class="font-medium">Importation et Traitement des Données :</strong> Intégration des notes issues de systèmes comme SCODOC,
+          avec une attention particulière à la conformité RGPD.</li>
+        <li><strong class="font-medium">Profil Étudiant Détaillé :</strong> Visualisation des notes, des moyennes pondérées (agrégations) et des
+          avis de poursuite d'études.</li>
+      </ol>
+      <div class="my-8 flex justify-center">
+        <img src="../images/jicursum-figure2.png" alt="Première interface graphique du projet" class="max-w-full md:max-w-2xl h-auto rounded-lg shadow-lg border border-slate-200"/>
+      </div>
+      <ol start="4" class="list-decimal-accent list-inside space-y-3 text-lg text-slate-700 leading-relaxed pl-4 mt-6">
+        <li><strong class="font-medium">Génération d'Avis Paramétrable :</strong> Les administrateurs peuvent définir des paliers pour la
+          génération automatique d'avis, assurant une évaluation équitable.</li>
+        <li><strong class="font-medium">Accès Conditionné pour les Écoles :</strong> Les écoles peuvent demander l'accès aux profils étudiants,
+          qui doivent donner leur consentement explicite, renforçant la protection des données.</li>
+        <li><strong class="font-medium">Export de Rapports :</strong> Possibilité de télécharger des rapports complets de poursuite d'études.</li>
+      </ol>
+    </section>
+
+    <section class="mb-10 p-6 bg-slate-50 rounded-lg shadow-md">
+      <h3 class="text-xl sm:text-2xl font-semibold text-accent-color mb-5 text-center">Approche Technique et Technologies Utilisées</h3>
+      <p class="text-lg text-slate-700 leading-relaxed mb-4">Pour mener à bien ce projet, nous avons fait les choix techniques suivants :</p>
+      <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 mb-6">
+        <li><strong class="font-medium">Back-end :</strong> PHP, pour sa flexibilité et son adéquation avec nos acquis.</li>
+        <li><strong class="font-medium">Front-end :</strong> HTML, CSS, et le framework Bootstrap pour un design responsive et une interface
+          utilisateur claire.</li>
+        <li><strong class="font-medium">Base de Données :</strong> MariaDB, gérée via phpMyAdmin.</li>
+        <li><strong class="font-medium">Architecture :</strong> Modèle-Vue-Contrôleur (MVC) pour une séparation claire des préoccupations et
+          une meilleure maintenabilité.</li>
+        <li><strong class="font-medium">Design Patterns :</strong> Nous avons implémenté des patterns comme la
+          <strong class="text-slate-800">Fabrique Abstraite</strong> (pour la gestion des listes d'étudiants triées/filtrées),
+          le <strong class="text-slate-800">Décorateur</strong> (pour l'application flexible de filtres et tris) et la <strong class="text-slate-800">Stratégie</strong>
+          (pour la création d'utilisateurs).</li>
+      </ul>
+      <div class="my-8 flex justify-center">
+        <img src="../images/jicursum-figure4.png" alt="Diagramme de classes" class="max-w-full md:max-w-2xl h-auto rounded-lg shadow-lg border border-slate-200"/>
+      </div>
+      <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 mt-6">
+        <li><strong class="font-medium">Gestion de Version :</strong> Git, avec une stratégie de branches évolutive pour une collaboration efficace.</li>
+      </ul>
+      <div class="my-8 flex justify-center">
+        <img src="../images/jicursum-figure17.png" alt="Exemple de merge-request" class="max-w-full md:max-w-lg h-auto rounded-lg shadow-lg border border-slate-200"/>
+      </div>
+    </section>
+
+    <section class="mb-10 p-6 bg-slate-50 rounded-lg shadow-md">
+      <h3 class="text-xl sm:text-2xl font-semibold text-accent-color mb-5 text-center">Gestion de Projet Agile : La Méthode Scrum</h3>
+      <p class="text-lg text-slate-700 leading-relaxed mb-4">Nous avons adopté la méthodologie <strong class="font-semibold text-slate-800">Agile Scrum</strong> pour structurer notre travail :</p>
+      <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 mb-6">
+        <li><strong class="font-medium">Sprints :</strong> Itérations de développement avec des objectifs clairs.</li>
+        <li><strong class="font-medium">Rituels Scrum :</strong> Réunions d'affinage (avec planning poker), sprint plannings, revues de
+          sprint avec le client (nos encadrants), et rétrospectives pour l'amélioration continue.</li>
+        <li><strong class="font-medium">Outils :</strong> Trello pour la gestion du backlog produit et des tâches de sprint, Discord pour
+          la communication quotidienne et le suivi des merge requests.</li>
+      </ul>
+      <div class="my-8 grid md:grid-cols-2 gap-8 items-center">
+        <img src="../images/jicursum-figure10.png" alt="Image du Trello pour la répartition des tâches" class="w-full h-auto rounded-lg shadow-lg border border-slate-200"/>
+        <img src="../images/jicursum-figure13.png" alt="Burndown Chart du sprint 2" class="w-full h-auto rounded-lg shadow-lg border border-slate-200"/>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Défis Relevés et Solutions</h2>
+      <p class="text-lg text-slate-700 leading-relaxed mb-4">Le projet n'a pas été sans défis :</p>
+      <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4">
+        <li><strong class="font-medium">Estimation des Tâches :</strong> L'estimation initiale s'est avérée complexe, nécessitant des
+          ajustements dans la gestion du backlog.</li>
+        <li><strong class="font-medium">Gestion des Branches Git :</strong> Nous avons affiné notre stratégie de "branching" pour éviter les
+          conflits de fusion et maintenir un flux de travail fluide.</li>
+        <li><strong class="font-medium">Disponibilité des Membres :</strong> Des contraintes externes ont parfois impacté la régularité du
+          travail, nous amenant à renforcer notre communication et notre flexibilité.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10 p-6 bg-slate-50 rounded-lg shadow-md">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-accent-color mb-4 text-center">Ce que j'ai Appris</h2>
+      <p class="text-lg text-slate-700 leading-relaxed mb-4">JiCursum a été une expérience extrêmement formatrice. J'ai pu :</p>
+      <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4">
+        <li><strong class="font-medium">Consolider mes compétences techniques</strong> en PHP, MariaDB, et dans l'application concrète de
+          Design Patterns.</li>
+        <li><strong class="font-medium">Mettre en pratique la méthodologie Agile Scrum</strong> dans un contexte réel, de la planification
+          à la livraison.</li>
+        <li><strong class="font-medium">Développer mes capacités de travail en équipe,</strong> de communication et de résolution de problèmes
+          complexes.</li>
+        <li><strong class="font-medium">Comprendre l'importance de la qualité du code,</strong> de la documentation et du respect des
+          contraintes (comme le RGPD) dans un projet professionnel.</li>
+      </ul>
+    </section>
+
+    <section class="mb-6">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Conclusion et Perspectives</h2>
+      <p class="text-lg text-slate-700 leading-relaxed text-justify">
+        Le projet JiCursum a abouti à une application web fonctionnelle répondant aux besoins essentiels de ses
+        utilisateurs. Bien que certaines fonctionnalités, comme l'archivage des étudiants, n'aient pu être implémentées par manque de temps, les bases sont solides et l'application offre une véritable plus-value. Cette SAE a été une étape clé dans mon parcours, me préparant concrètement aux défis du développement logiciel en environnement professionnel.
+      </p>
+    </section>
+  </article>
+</main>
+
+<footer class="bg-slate-900 text-slate-400 py-8 text-center">
+  <div class="container mx-auto px-6">
+    <p>© <span id="currentYear"></span> Matteo DI PASQUALE. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Close mobile menu when a link is clicked
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  });
+
+  // Set current year in footer
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+</script>
+</body>
+</html>
