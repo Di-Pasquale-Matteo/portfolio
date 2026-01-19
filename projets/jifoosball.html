@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatteoDP - Projet JiFoosball</title>
+    <meta name="description" content="Détail du projet JiCursum réalisé par Matteo DI PASQUALE, étudiant en BUT Informatique.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+        /* Custom accent color - inspired by your CV's pink/purple */
+        .accent-color { color: #E11D48; /* Rose 600 in Tailwind v3 */}
+        .bg-accent-color { background-color: #E11D48; }
+        .border-accent-color { border-color: #E11D48; }
+        .hover\:text-accent-hover:hover { color: #BE123C; /* Rose 700 */}
+        .hover\:bg-accent-hover:hover { background-color: #BE123C; }
+
+        @media (min-width: 1060px) {
+            .menu-desktop {
+                display: flex !important;
+            }
+            .menu-mobile {
+                display: none !important;
+            }
+            .sous-menu-mobile{
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 1059px) {
+            .menu-desktop {
+                display: none !important;
+            }
+            .menu-mobile {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+<nav class="bg-slate-900 text-white p-4 sticky top-0 z-50 shadow-lg">
+    <div class="mx-auto flex justify-between items-center">
+        <a href="../index.html" class="text-xl font-bold hover:text-accent-color transition-colors">Matteo DI PASQUALE</a>
+        <div class="menu-desktop hidden space-x-6">
+            <a href="../index.html#about" class="hover:text-accent-color transition-colors">À Propos</a>
+            <a href="../index.html#skills" class="hover:text-accent-color transition-colors">Compétences</a>
+            <a href="../index.html#projects" class="hover:text-accent-color transition-colors">Projets</a>
+            <a href="../index.html#experience" class="hover:text-accent-color transition-colors">Expérience</a>
+            <a href="../index.html#education" class="hover:text-accent-color transition-colors">Formation</a>
+            <a href="../index.html#contact" class="hover:text-accent-color transition-colors">Contact</a>
+            <a href="../portfolioApprentissage.html" class="hover:text-accent-color transition-colors">Portfolio d'apprentissage</a>
+        </div>
+        <button id="mobile-menu-button" class="menu-mobile focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="sous-menu-mobile hidden mt-2 space-y-2">
+        <a href="../index.html#about" class="block px-2 py-1 hover:bg-slate-700 rounded">À Propos</a>
+        <a href="../index.html#skills" class="block px-2 py-1 hover:bg-slate-700 rounded">Compétences</a>
+        <a href="../index.html#projects" class="block px-2 py-1 hover:bg-slate-700 rounded">Projets</a>
+        <a href="../index.html#experience" class="block px-2 py-1 hover:bg-slate-700 rounded">Expérience</a>
+        <a href="../index.html#education" class="block px-2 py-1 hover:bg-slate-700 rounded">Formation</a>
+        <a href="../index.html#contact" class="block px-2 py-1 hover:bg-slate-700 rounded">Contact</a>
+        <a href="../portfolioApprentissage.html" class="block px-2 py-1 hover:bg-slate-700 rounded">Portfolio d'apprentissage</a>
+    </div>
+</nav>
+
+<main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <article class="bg-white p-6 sm:p-8 md:p-10 rounded-lg shadow-xl max-w-5xl mx-auto">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-8 text-center accent-color">
+            Projet Tournois de Babyfoot : Application Web et Mobile
+        </h1>
+
+        <div class="my-8 flex justify-center">
+            <img src="../images/jifoosball-logo.png" alt="Logo Babyfoot" class="max-w-xs sm:max-w-sm h-auto rounded-md shadow-md"/>
+        </div>
+
+        <section class="mb-12">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Contexte et Objectifs</h2>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                Dans le cadre du semestre 5 du BUT Informatique, nous avons lancé un projet ambitieux : développer une
+                <strong class="font-semibold text-accent-color">application web et mobile</strong> pour gérer des tournois de babyfoot.
+                Contrairement aux projets académiques classiques, ce projet est réalisé pour des clients extérieurs, avec une vision concrète et orientée utilisateur.
+            </p>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify mt-4">
+                Les objectifs principaux sont :
+            </p>
+            <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 mt-2">
+                <li>Permettre l’organisation de tournois avec phases de poules et brackets.</li>
+                <li>Gérer des équipes fixes ou aléatoires pour chaque match.</li>
+                <li>Implémenter un système de classement basé sur le <strong>Elo</strong>.</li>
+                <li>Afficher les bars partenaires sur une carte interactive pour faciliter la localisation des tournois.</li>
+                <li>Créer une application réactive et intuitive, accessible sur web et mobile.</li>
+            </ul>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Architecture et Choix Techniques</h2>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify mb-4">
+                Pour répondre aux besoins du projet, nous avons pris plusieurs décisions techniques clés :
+            </p>
+            <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 mb-6">
+                <li><strong>API :</strong> Développée en <strong>Kotlin</strong> pour profiter des fonctionnalités modernes et typées, permettant une communication fluide avec le web et le mobile.</li>
+                <li><strong>Front-end Web :</strong> Réalisé en <strong>React</strong> avec <strong>Vite</strong> pour un rendu dynamique, une compilation rapide et une grande flexibilité dans le développement.</li>
+                <li><strong>Front-end Mobile :</strong> Développé en <strong>React Native</strong> avec <strong>Expo</strong>, permettant de tester rapidement l’application sur téléphone via <strong>Expo Go</strong> et de partager une partie de la logique avec le web.</li>
+                <li><strong>Base de données :</strong> MySQL, conceptualisée pour gérer utilisateurs, équipes, tournois, matches et scores.</li>
+            </ul>
+            <div class="my-8 flex flex-col md:flex-row gap-6 items-center justify-center">
+                <img src="../images/jifoosball-web.png" alt="Application Babyfoot Web"
+                     class="md:w-3/4 w-full h-auto rounded-lg shadow-lg border border-slate-200"/>
+                <img src="../images/jifoosball-mobile.webp" alt="Application Babyfoot Mobile"
+                     class="md:w-1/4 w-full h-auto rounded-lg shadow-lg border border-slate-200"/>
+            </div>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                Cette architecture sépare clairement le web et le mobile, tout en utilisant une API commune, ce qui simplifie l’évolution future et la maintenance.
+            </p>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Fonctionnalités Principales (en cours)</h2>
+            <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4">
+                <li>Création et gestion de tournois avec phases de poules et brackets.</li>
+                <li>Gestion d’équipes fixes ou aléatoires pour chaque match.</li>
+                <li>Système de classement Elo dynamique pour refléter les performances des joueurs et équipes.</li>
+                <li>Carte interactive affichant les bars partenaires et les lieux de tournois.</li>
+                <li>Interface utilisateur responsive et adaptée pour web et mobile.</li>
+            </ul>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Défis et Apprentissages</h2>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify mb-4">
+                Ce projet a présenté plusieurs défis particuliers par rapport aux projets académiques :
+            </p>
+            <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4">
+                <li><strong>Apprentissage de Kotlin :</strong> Nouveau langage pour moi, avec des concepts différents de PHP et JavaScript.</li>
+                <li><strong>Découverte de React Native :</strong> Intégration d’un framework mobile moderne, très différent de React Web, et adaptation des composants pour un rendu natif.</li>
+                <li><strong>Architecture multi-plateforme :</strong> Maintenir une API unique pour deux clients (web et mobile) tout en assurant cohérence et performances.</li>
+                <li><strong>Complexité des tournois :</strong> La gestion des phases de poules, brackets et équipes aléatoires nécessite une logique métier solide et modulable.</li>
+                <li><strong>Expérience utilisateur :</strong> Concevoir une interface claire et intuitive malgré la diversité des fonctionnalités et des supports.</li>
+            </ul>
+        </section>
+
+        <section class="mb-12 p-6 bg-slate-50 rounded-lg shadow-md">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-accent-color mb-5 text-center">Compétences Développées</h2>
+            <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4">
+                <li>Maîtrise initiale de Kotlin pour le développement d’API backend.</li>
+                <li>Création d’interfaces web et mobiles avec React et React Native.</li>
+                <li>Conception d’une architecture scalable et multi-plateforme.</li>
+                <li>Gestion d’un projet complexe avec un produit concret pour des clients externes.</li>
+                <li>Renforcement des compétences en travail d’équipe, communication et adaptation à de nouveaux outils.</li>
+            </ul>
+        </section>
+
+        <section class="mb-6">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Conclusion et Perspectives</h2>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                Bien que le projet soit encore en cours, JiFoosball constitue une expérience riche et formatrice.
+                La complexité du projet, combinée à l’apprentissage de nouvelles technologies et frameworks, m’a permis de développer des compétences concrètes pour des projets professionnels multi-plateformes.
+                À terme, l’application permettra aux utilisateurs de gérer leurs tournois facilement, avec une interface fluide et un système de classement fiable.
+            </p>
+        </section>
+    </article>
+</main>
+
+
+
+
+<footer class="bg-slate-900 text-slate-400 py-8 text-center">
+    <div class="container mx-auto px-6">
+        <p>© <span id="currentYear"></span> Matteo DI PASQUALE. Tous droits réservés.</p>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
+    // Set current year in footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+</script>
+</body>
+</html>

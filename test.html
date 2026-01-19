@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Background arène — particles</title>
+    <style>
+        :root {
+            --bg-deep: #060816; /* quasi noir bleu */
+            --bg-mid: #071733; /* bleu nuit */
+            --accent: #1fb6ff; /* accent bleu clair (optionnel) */
+            --energy: #ff5454; /* accent rouge/orange pour petites lueurs */
+            --particle-color: rgba(255, 255, 255, 0.08);
+            --spark-color: rgba(255, 182, 60, 0.95);
+        }
+
+        /* reset minimal */
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Inter, Roboto, system-ui, -apple-system, "Segoe UI", Helvetica, Arial;
+        }
+
+        body {
+            min-height: 100%;
+            background: var(--bg-deep);
+            color: #fff;
+            overflow: hidden;
+        }
+
+        /* container pour le background */
+        .arena-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -100; /* placé derrière le contenu */
+            pointer-events: none; /* laisse la page interactive */
+            display: block;
+        }
+
+        /* Dégradé radial central + texture */
+        .arena-bg .radial {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(1200px 600px at 50% 40%, rgba(8, 40, 80, 0.55), rgba(6, 8, 22, 0.95) 40%);
+            mix-blend-mode: normal;
+            filter: blur(0.3px);
+        }
+
+        /* Noise overlay (subtil) to avoid flat colors */
+        .arena-bg .noise {
+            position: absolute;
+            inset: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><filter id="n"><feTurbulence baseFrequency="0.9" numOctaves="1" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.05" fill="%23000"/></svg>');
+            opacity: 0.06;
+            mix-blend-mode: overlay;
+            pointer-events: none;
+        }
+
+        /* Canvas for particles */
+        canvas#particles {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            pointer-events: none;
+        }
+
+        /* Spotlight vignette at bottom for arena feel */
+        .arena-bg .vignette {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(60% 25% at 50% 100%, rgba(8, 24, 48, 0.55), transparent 30%),
+            linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.6) 80%);
+            mix-blend-mode: multiply;
+            pointer-events: none;
+        }
+
+        /* example page content */
+        .content {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 28px;
+            border-radius: 12px;
+            backdrop-filter: blur(6px) saturate(1.1);
+            box-shadow: 0 10px 30px rgba(3, 8, 20, 0.6);
+            max-width: 900px;
+            color: #e6f0ff;
+        }
+
+        h1 {
+            margin: 0 0 8px 0;
+            font-size: 28px;
+            letter-spacing: 0.6px
+        }
+
+        p {
+            margin: 0;
+            color: rgba(230, 240, 255, 0.85)
+        }
+
+        /* small responsive tuning */
+        @media (max-width: 720px) {
+            .card {
+                padding: 20px;
+                margin: 12px
+            }
+
+            h1 {
+                font-size: 20px
+            }
+        }
+
+
+        #spark-container {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: visible;
+        }
+
+        .spark {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: cyan;
+            border-radius: 50%;
+            filter: drop-shadow(0 0 6px cyan) drop-shadow(0 0 12px #00eaff);
+            opacity: 1;
+            transform: translate(-50%, -50%);
+            animation: spark-fade 0.35s ease-out forwards;
+        }
+
+        /* Étincelles en forme d’éclairs */
+        .spark::before,
+        .spark::after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 10px;
+            background: cyan;
+            top: -2px;
+            left: 2px;
+            transform-origin: center;
+            transform: rotate(20deg);
+            opacity: 0.8;
+        }
+
+        .spark::after {
+            transform: rotate(-20deg);
+        }
+
+        @keyframes spark-fade {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(0.2);
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<!-- background layer -->
+<div class="arena-bg" aria-hidden="true">
+    <div class="radial"></div>
+    <canvas id="particles"></canvas>
+    <div class="noise"></div>
+    <div class="vignette"></div>
+</div>
+
+<!-- your page content -->
+<main class="content" role="main">
+    <section class="card">
+        <h1>Matteo — Portfolio</h1>
+        <p>Un fond arène bleu/noir avec particules animées — prêt à intégrer.</p>
+        <p style="margin-top:12px;color:rgba(230,240,255,0.6)">Hover ou clique pour générer de petites étincelles.</p>
+    </section>
+</main>
+
+<script>
+    /*
+    Particle background with two layers:
+    - Slow floating particles (bubbles / dust)
+    - Sparks on pointermove/click
+
+    Performance notes:
+    - Caps particle counts based on viewport
+    - Uses requestAnimationFrame
+    - Pointer interactions are throttled
+    */
+    (() => {
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d', {alpha: true});
+        let DPR = Math.max(1, window.devicePixelRatio || 1);
+
+        // resize canvas to match CSS size
+        function resize() {
+            DPR = Math.max(1, window.devicePixelRatio || 1);
+            canvas.width = Math.floor(canvas.clientWidth * DPR);
+            canvas.height = Math.floor(canvas.clientHeight * DPR);
+            ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+        }
+
+        window.addEventListener('resize', resize, {passive: true});
+        resize();
+
+        const w = () => canvas.clientWidth;
+        const h = () => canvas.clientHeight;
+
+        // particle arrays
+        const dust = [];
+        const sparks = [];
+
+        // settings (tweak these)
+        const MAX_DUST = Math.round(Math.max(40, Math.min(150, (w() * h()) / 80000))); // scaled to screen
+        const MAX_SPARKS = 120;
+
+        // utils
+        const rand = (a, b = 0) => Math.random() * (a - b) + b;
+        const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+
+        // create initial dust
+        function spawnDust(n = 1) {
+            for (let i = 0; i < n; i++) {
+                dust.push({
+                    x: rand(w()),
+                    y: rand(h()),
+                    vx: rand(0.2, -0.2),
+                    vy: rand(0.05, 0.6),
+                    size: rand(0.6, 3.2),
+                    alpha: rand(0.02, 0.14),
+                    life: Infinity,
+                    drift: rand(-0.05, 0.05)
+                });
+            }
+        }
+
+        // spawn a spark burst at (x,y)
+        function spawnSparks(x, y, amount = 18) {
+            for (let i = 0; i < amount; i++) {
+                if (sparks.length > MAX_SPARKS) break;
+
+                const ang = Math.random() * Math.PI * 2;
+                const speed = Math.random() * 4 + 2;
+
+                sparks.push({
+                    x, y,
+                    vx: Math.cos(ang) * speed * (Math.random() * 1.4 + 0.6),
+                    vy: Math.sin(ang) * speed * (Math.random() * 0.5 + 0.4),
+                    born: performance.now(),
+                    life: rand(120, 260),
+
+                    // segments pour un éclair
+                    segments: Array.from({length: 3 + Math.floor(Math.random() * 4)}, () => ({
+                        dx: rand(-6, 6),
+                        dy: rand(-6, 6)
+                    })),
+
+                    colorCore: "rgba(255,255,255,",
+                    colorGlow: "rgba(0,200,255,"
+                });
+            }
+        }
+
+        // gentle per-frame updates
+        let last = performance.now();
+
+        function tick(now) {
+            const dt = Math.min(40, now - last);
+            last = now;
+
+            const cw = canvas.clientWidth, ch = canvas.clientHeight;
+            ctx.clearRect(0, 0, cw, ch);
+
+            // ensure dust count
+            if (dust.length < MAX_DUST) spawnDust(Math.min(4, MAX_DUST - dust.length));
+
+            // draw dust (soft blurred circles)
+            for (let i = 0; i < dust.length; i++) {
+                const p = dust[i];
+                p.x += p.vx * (dt / 16) + p.drift;
+                p.y += p.vy * (dt / 16);
+                if (p.x < -10) p.x = cw + 10;
+                if (p.x > cw + 10) p.x = -10;
+                if (p.y > ch + 10) {
+                    p.y = -10;
+                    p.x = rand(cw);
+                }
+
+                // draw
+                ctx.beginPath();
+                const grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 6);
+                grd.addColorStop(0, `rgba(200,220,255,${p.alpha})`);
+                grd.addColorStop(0.6, `rgba(80,110,160,${p.alpha * 0.35})`);
+                grd.addColorStop(1, 'rgba(0,0,0,0)');
+                ctx.fillStyle = grd;
+                ctx.fillRect(p.x - p.size * 6, p.y - p.size * 6, p.size * 12, p.size * 12);
+                ctx.closePath();
+            }
+
+            // update sparks
+            // update sparks (éclairs)
+            for (let i = sparks.length - 1; i >= 0; i--) {
+                const s = sparks[i];
+                const age = now - s.born;
+
+                if (age > s.life) {
+                    sparks.splice(i, 1);
+                    continue;
+                }
+
+                // physics
+                const t = age / s.life;
+                s.vx *= 0.92;
+                s.vy *= 0.92;
+                s.x += s.vx * (dt / 14);
+                s.y += s.vy * (dt / 14);
+
+                const alpha = 1 - t;
+
+                // --- glow électrique externe ---
+                ctx.beginPath();
+                ctx.strokeStyle = `${s.colorGlow}${0.35 * alpha})`;
+                ctx.lineWidth = 6;
+                ctx.lineCap = "round";
+
+                let px = s.x;
+                let py = s.y;
+                ctx.moveTo(px, py);
+
+                for (const seg of s.segments) {
+                    px += seg.dx;
+                    py += seg.dy;
+                    ctx.lineTo(px, py);
+                }
+
+                ctx.stroke();
+                ctx.closePath();
+
+                // --- trait lumineux central ---
+                ctx.beginPath();
+                ctx.strokeStyle = `${s.colorCore}${0.9 * alpha})`;
+                ctx.lineWidth = 2;
+                ctx.lineCap = "round";
+
+                px = s.x;
+                py = s.y;
+                ctx.moveTo(px, py);
+
+                for (const seg of s.segments) {
+                    px += seg.dx;
+                    py += seg.dy;
+                    ctx.lineTo(px, py);
+                }
+
+                ctx.stroke();
+                ctx.closePath();
+            }
+
+
+            requestAnimationFrame(tick);
+        }
+
+        requestAnimationFrame(tick);
+
+        // pointer interactivity: create sparks on move (throttled) and on click
+        let lastPointer = 0;
+        const PTR_THROTTLE = 40; // ms
+
+        function pointerHandler(e) {
+            const now = performance.now();
+            if (now - lastPointer < PTR_THROTTLE) return;
+            lastPointer = now;
+            const rect = canvas.getBoundingClientRect();
+            const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+            const y = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top;
+            spawnSparks(x, y, 6 + Math.round(Math.random() * 8));
+        }
+
+        function clickHandler(e) {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            spawnSparks(x, y, 18 + Math.round(Math.random() * 18));
+        }
+
+        window.addEventListener('mousemove', pointerHandler, {passive: true});
+        window.addEventListener('touchmove', pointerHandler, {passive: true});
+        window.addEventListener('click', clickHandler, {passive: true});
+
+        // initial spawn
+        spawnDust(Math.round(MAX_DUST * 0.8));
+    })();
+</script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatteoDP - Projet MyAvatar</title>
+    <meta name="description" content="Détail du projet JiCursum réalisé par Matteo DI PASQUALE, étudiant en BUT Informatique.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+        /* Custom accent color - inspired by your CV's pink/purple */
+        .accent-color { color: #E11D48; /* Rose 600 in Tailwind v3 */}
+        .bg-accent-color { background-color: #E11D48; }
+        .border-accent-color { border-color: #E11D48; }
+        .hover\:text-accent-hover:hover { color: #BE123C; /* Rose 700 */}
+        .hover\:bg-accent-hover:hover { background-color: #BE123C; }
+
+        @media (min-width: 1060px) {
+            .menu-desktop {
+                display: flex !important;
+            }
+            .menu-mobile {
+                display: none !important;
+            }
+            .sous-menu-mobile{
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 1059px) {
+            .menu-desktop {
+                display: none !important;
+            }
+            .menu-mobile {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+<nav class="bg-slate-900 text-white p-4 sticky top-0 z-50 shadow-lg">
+    <div class="mx-auto flex justify-between items-center">
+        <a href="../index.html" class="text-xl font-bold hover:text-accent-color transition-colors">Matteo DI PASQUALE</a>
+        <div class="menu-desktop hidden space-x-6">
+            <a href="../index.html#about" class="hover:text-accent-color transition-colors">À Propos</a>
+            <a href="../index.html#skills" class="hover:text-accent-color transition-colors">Compétences</a>
+            <a href="../index.html#projects" class="hover:text-accent-color transition-colors">Projets</a>
+            <a href="../index.html#experience" class="hover:text-accent-color transition-colors">Expérience</a>
+            <a href="../index.html#education" class="hover:text-accent-color transition-colors">Formation</a>
+            <a href="../index.html#contact" class="hover:text-accent-color transition-colors">Contact</a>
+            <a href="../portfolioApprentissage.html" class="hover:text-accent-color transition-colors">Portfolio d'apprentissage</a>
+        </div>
+        <button id="mobile-menu-button" class="menu-mobile focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="sous-menu-mobile hidden mt-2 space-y-2">
+        <a href="../index.html#about" class="block px-2 py-1 hover:bg-slate-700 rounded">À Propos</a>
+        <a href="../index.html#skills" class="block px-2 py-1 hover:bg-slate-700 rounded">Compétences</a>
+        <a href="../index.html#projects" class="block px-2 py-1 hover:bg-slate-700 rounded">Projets</a>
+        <a href="../index.html#experience" class="block px-2 py-1 hover:bg-slate-700 rounded">Expérience</a>
+        <a href="../index.html#education" class="block px-2 py-1 hover:bg-slate-700 rounded">Formation</a>
+        <a href="../index.html#contact" class="block px-2 py-1 hover:bg-slate-700 rounded">Contact</a>
+        <a href="../portfolioApprentissage.html" class="block px-2 py-1 hover:bg-slate-700 rounded">Portfolio d'apprentissage</a>
+    </div>
+</nav>
+
+<main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <article class="bg-white p-6 sm:p-8 md:p-10 rounded-lg shadow-xl max-w-5xl mx-auto">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-8 text-center accent-color">
+            Projet MyAvatar : Gestion Avancée d'Avatars Utilisateurs
+        </h1>
+
+        <div class="my-8 flex justify-center">
+            <img src="../images/myavatar-ui1.png" alt="UI MyAvatar" class="h-auto rounded-md shadow-md"/>
+        </div>
+
+        <section class="mb-12">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Contexte et Motivation</h2>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                Dans le cadre du semestre 5 du BUT Informatique à l'IUT de Montpellier-Sète, nous avons travaillé sur
+                <strong class="font-semibold text-accent-color">MyAvatar</strong>, une application web inspirée du service
+                <a href="https://fr.gravatar.com/" class="text-accent-color underline">Gravatar</a>. L'objectif était de créer une solution permettant aux utilisateurs de gérer leurs avatars et profils personnels de manière sécurisée et flexible.
+            </p>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify mt-4">
+                L'application devait répondre à plusieurs enjeux :
+            </p>
+            <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 mt-2">
+                <li>Offrir une interface intuitive pour la gestion des avatars et des informations personnelles.</li>
+                <li>Garantir la sécurité des comptes et des données utilisateurs (hash des images, mots de passe sécurisés).</li>
+                <li>Permettre un contrôle strict de la confidentialité des profils.</li>
+                <li>Fournir un panneau d’administration pour gérer les utilisateurs et les paramètres globaux du site.</li>
+                <li>Maintenir une architecture flexible et scalable pour faciliter la maintenance et l’évolution du projet.</li>
+            </ul>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Fonctionnalités Détaillées</h2>
+
+            <h3 class="text-xl sm:text-2xl font-semibold text-slate-800 mb-2">Gestion de Profil</h3>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify mb-4">
+                Chaque utilisateur peut créer et modifier sa page de profil, comprenant les informations personnelles suivantes : prénom (obligatoire), nom, genre, date de naissance, pays et une courte biographie.
+                Des liens vers des réseaux sociaux ou sites personnels peuvent également être ajoutés, et toutes ces informations sont optionnelles et modifiables à tout moment.
+            </p>
+
+            <h3 class="text-xl sm:text-2xl font-semibold text-slate-800 mb-2">Gestion des Avatars</h3>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify mb-4">
+                Les utilisateurs peuvent uploader jusqu'à 5 avatars, qu'ils peuvent sélectionner comme avatar principal ou supprimer à tout moment.
+                Le système redimensionne automatiquement chaque image à 512x512 pixels et les convertit en PNG.
+                Chaque fichier est stocké avec un hash unique pour éviter les conflits de noms et garantir la sécurité.
+            </p>
+
+            <h3 class="text-xl sm:text-2xl font-semibold text-slate-800 mb-2">Confidentialité et Sécurité</h3>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify mb-4">
+                MyAvatar permet aux utilisateurs de masquer leur profil et leur avatar. Seul l’utilisateur peut activer ou désactiver cette option, et aucun administrateur n’a accès aux profils masqués.
+                Les mots de passe doivent respecter des critères stricts : 8 à 30 caractères, au moins une majuscule, une minuscule et un chiffre.
+                Les utilisateurs peuvent également modifier leur adresse email ou supprimer complètement leur compte, entraînant la suppression de toutes leurs données.
+            </p>
+
+            <h3 class="text-xl sm:text-2xl font-semibold text-slate-800 mb-2">Administration et Maintenance</h3>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify mb-4">
+                Le panneau d’administration permet de gérer tous les utilisateurs et paramètres du site :
+            </p>
+            <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 mb-4">
+                <li>Rechercher, filtrer et supprimer des utilisateurs.</li>
+                <li>Changer la langue du site (français, anglais, indonésien).</li>
+                <li>Activer ou désactiver le mode maintenance pour effectuer des mises à jour sans impacter les utilisateurs.</li>
+            </ul>
+        </section>
+
+        <section class="mb-12 p-6 bg-slate-50 rounded-lg shadow-md">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-accent-color mb-5 text-center">Architecture et Choix Techniques</h2>
+            <p class="text-lg text-slate-700 leading-relaxed mb-4">
+                Pour garantir la maintenabilité et la robustesse de l'application, nous avons choisi la stack suivante :
+            </p>
+            <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4 mb-6">
+                <li><strong>Back-end :</strong> PHP 8.3 et Symfony 6.4 avec architecture MVC.</li>
+                <li><strong>Base de données :</strong> PostgreSQL 14 pour gérer utilisateurs, profils et avatars.</li>
+                <li><strong>Front-end :</strong> HTML, Tailwind CSS et DaisyUI pour un design responsive et moderne.</li>
+                <li><strong>Conteneurisation :</strong> Docker et Docker Compose pour un environnement de développement homogène.</li>
+                <li><strong>CI/CD :</strong> GitLab CI pour automatiser les tests, le build et le déploiement.</li>
+            </ul>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Défis Relevés et Solutions Techniques</h2>
+            <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4">
+                <li><strong>Hash unique des avatars :</strong> Assurer que deux utilisateurs ne puissent jamais écraser le fichier de l’autre, tout en garantissant un accès rapide via l’email hashé.</li>
+                <li><strong>Redimensionnement automatique :</strong> Conversion et mise à l’échelle des images à 512x512 pour uniformiser l’affichage.</li>
+                <li><strong>Confidentialité stricte :</strong> Mise en place d’un système pour masquer les profils aux autres utilisateurs, y compris côté API.</li>
+                <li><strong>Maintenance du site :</strong> Création d’un mode maintenance global pour sécuriser les mises à jour.</li>
+                <li><strong>Tests automatisés :</strong> PHPUnit, PHPStan, PHP CS Fixer et ESLint pour garantir la qualité et la cohérence du code.</li>
+            </ul>
+        </section>
+
+        <section class="mb-12 p-6 bg-slate-50 rounded-lg shadow-md">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-accent-color mb-5 text-center">Compétences Développées</h2>
+            <ul class="list-disc-accent list-inside space-y-2 text-lg text-slate-700 leading-relaxed pl-4">
+                <li>Maîtrise de Symfony et PHP orienté objet pour un projet complet full-stack.</li>
+                <li>Gestion avancée de la sécurité et confidentialité des utilisateurs et fichiers.</li>
+                <li>Expérience concrète de CI/CD et de workflows Git collaboratifs.</li>
+                <li>Design et développement d’interfaces web responsives avec Tailwind CSS et DaisyUI.</li>
+                <li>Application de méthodes agiles pour planifier, suivre et livrer un projet complexe en équipe.</li>
+            </ul>
+        </section>
+
+        <section class="mb-6">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4 border-b-2 border-accent-color pb-2">Conclusion et Perspectives</h2>
+            <p class="text-lg text-slate-700 leading-relaxed text-justify">
+                MyAvatar est un projet complet qui combine gestion sécurisée des profils et avatars, interface utilisateur intuitive et architecture scalable.
+                Ce projet m’a permis de renforcer mes compétences full-stack, de travailler sur la sécurité et la confidentialité, et de comprendre les bonnes pratiques de CI/CD et de collaboration en équipe.
+                Il constitue une base solide pour des projets futurs nécessitant sécurité, modularité et expérience utilisateur optimale.
+            </p>
+        </section>
+    </article>
+</main>
+
+
+
+<footer class="bg-slate-900 text-slate-400 py-8 text-center">
+    <div class="container mx-auto px-6">
+        <p>© <span id="currentYear"></span> Matteo DI PASQUALE. Tous droits réservés.</p>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
+    // Set current year in footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+</script>
+</body>
+</html>
